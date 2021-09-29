@@ -5,6 +5,8 @@
  */
 package Modelos;
 
+import java.sql.PreparedStatement;
+
 /**
  *
  * @author PC_Daniel
@@ -64,7 +66,27 @@ public class Producto {
     
     //METODOS
     public void crearProducto(){
+        Conexion objConector = new Conexion(); 
+        objConector.conectar();
         
+        try {
+            
+            String sql = "INSERT INTO producto VALUES (?,?,?,?,?);";
+            PreparedStatement stmt; 
+            stmt = objConector.conn.prepareStatement(sql); 
+            stmt.setInt(1, this.codigoProducto);
+            stmt.setString(2, this.nombreProducto);
+            stmt.setInt(3, this.cantidadProducto);
+            stmt.setInt(4, this.precioProducto);
+            stmt.setString(5, this.categoriaProducto);
+            
+            stmt.execute(); 
+            
+            objConector.desconectar();
+            
+        } catch (Exception error) {
+            System.out.println("Error en modelo: "+error);
+        }
     }
     
     public void consultarProducto(){

@@ -21,7 +21,7 @@
         </header>
         
         <section>
-            <form>
+            <form method="POST" action="ControlProducto">
                 <div class="container">
                     <div class="row">
                         <div class="col">
@@ -46,7 +46,7 @@
                             
                             <label>Categoria: </label>
                             
-                            <select class="form-select" multiple aria-label="multiple select example">
+                            <select class="form-select" multiple aria-label="multiple select example" name="categoriaProducto">
                                 <option value="Abarrotes">Abarrotes</option>
                                 <option value="Granos">Granos</option>
                                 <option value="Frutas">Frutas</option>
