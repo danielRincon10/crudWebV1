@@ -14,9 +14,9 @@ public class Conexion {
     //ATRIBUTOS
     public Connection conn; 
     public String host = "localhost:3306"; 
-    public String dataBase = "crudweb1"; 
-    public String user = "root"; 
-    public String password = ""; 
+    public String dataBase = "c3s31formador"; 
+    public String user = "c3s31formador"; 
+    public String password = "MESb5vOf"; 
     
     //METODOS
     public void conectar(){
