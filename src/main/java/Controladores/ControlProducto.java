@@ -87,7 +87,22 @@ public class ControlProducto extends HttpServlet {
                 
                 out.println(mensaje); 
             }
-            
+            else if (accion.equals("Eliminar")){
+                
+                int codigoProducto = Integer.parseInt(request.getParameter("codigoProducto"));
+                                
+                objProducto.setCodigoProducto(codigoProducto);
+                
+                objProducto.eliminarProducto();
+                
+                String mensaje = " <html> <body>"+
+                                 "<script type='text/javaScript'> "+
+                                 "  alert('Producto eliminado correctamente!!'); "+
+                                 "  window.location.href='index.jsp'; "+
+                                 "</script> </body> </html>"; 
+                
+               out.println(mensaje); 
+            }
             
             
             

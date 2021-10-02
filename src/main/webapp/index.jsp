@@ -17,6 +17,17 @@
         <link href="assets/estilos/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <script type="text/javascript">
+            function confirmar(){
+                var respuesta = confirm("¿Desea eliminar el producto?"); 
+                if(respuesta === true){
+                    return true; 
+                }
+                else{
+                    return false; 
+                }
+            }
+        </script>
         <header>
             <div class="container bg-success bg-opacity-10 text-center margen">
                 <h1> Crud Mision TIC JSP + Bootstrap</h1>
@@ -98,7 +109,7 @@
                     <td><%=listaProducto.get(i).getCategoriaProducto() %></td>
                     <td>
                         <a href="actualizar.jsp?codigoProducto=<%=listaProducto.get(i).getCodigoProducto() %>"><button class="btn btn-primary">Actualizar</button></a>
-                        <a href="ControlProducto?codigoProducto=<%=listaProducto.get(i).getCodigoProducto() %>"><button class="btn btn-danger">Eliminar</button></a>
+                        <a href="ControlProducto?codigoProducto=<%=listaProducto.get(i).getCodigoProducto() %>&btnAccion=Eliminar"><button class="btn btn-danger" onclick="return confirmar();">Eliminar</button></a>
                     </td>
                   </tr>
                   <%}%>

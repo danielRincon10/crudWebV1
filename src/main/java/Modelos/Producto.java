@@ -159,6 +159,23 @@ public class Producto {
     }
     
     public void eliminarProducto(){
+        Conexion objConector = new Conexion(); 
+        objConector.conectar();
         
+        try {
+            
+            String sql = "DELETE FROM producto " +
+                            "WHERE codigoProducto = ?; "; 
+            PreparedStatement stmt; 
+            stmt = objConector.conn.prepareStatement(sql); 
+            stmt.setInt(1, this.codigoProducto);
+            
+            stmt.execute(); 
+            
+            objConector.desconectar();
+            
+        } catch (Exception error) {
+            System.out.println("Error en modelo: "+error);
+        }
     }
 }
